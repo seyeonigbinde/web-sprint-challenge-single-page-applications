@@ -17,10 +17,10 @@ export default function Form (props) {
   return (
     <>
     <div className='home-image'>
-        <h1>Order your Pizza</h1>
+        <h1>Place Your Order!</h1>
       </div>
       <h1> Build you own pizza</h1>
-    <form className='container' onSubmit={onSubmit} id="pizza-form">
+    <form onSubmit={onSubmit} id="pizza-form">
 
         <div className="errors">
             <em>
@@ -31,7 +31,7 @@ export default function Form (props) {
           </em>
         </div>
       <div>
-      <label>Name
+      <label><h4>Name: </h4>
           <input
             type="text"
             value={values.name}
@@ -42,7 +42,7 @@ export default function Form (props) {
             maxLength="30"
           />
         </label>
-      <label>Choice of Size 
+      <label><h4>Choice of Size: </h4>
           <select value={values.size} name="size" onChange={onChange} id="size-dropdown">
             <option value="">-- Select --</option>
             <option value="small">Small</option>
@@ -50,7 +50,7 @@ export default function Form (props) {
             <option value="large">Large</option>
           </select>
         </label>
-        <p>Choice of Sauce</p>
+        <h4>Choice of Sauce: </h4>
         <label>
           <input type="radio" value="original_red" onChange={onChange} name="choice" checked={values.choice === "original_red"}/>Original Red
         </label>
@@ -65,7 +65,7 @@ export default function Form (props) {
         </label>
 
         {/* toppings */}
-    <p>Add Toppings</p>
+    <h4>Add Toppings: </h4>
     <div className="toppings">
         <label>
           <input type="checkbox" name="topping1" checked={values.pepper} onChange={onChange}/> Pepperoni
@@ -110,7 +110,7 @@ export default function Form (props) {
           <input type="checkbox" name="extra_cheese"  checked={values.extra_cheese} onChange={onChange} /> Extra Cheese
         </label> */}
      </div>
-        <p> Special Instruction</p>
+        <h4> Special Instruction</h4>
         <textarea name="special" id="special-text" value={values.special} onChange={onChange} placeholder="Anything else you'd like to add?" rows="5" cols="100" />
 
         <div id="order-button">
