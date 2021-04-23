@@ -5,6 +5,7 @@ import schema from './formSchema';
 import axios from 'axios';
 import Order from './Order';
 import Home from './Home';
+import Confirmation from './Confirmation';
 
 const initialFormValues = {
   name: "",
@@ -28,17 +29,17 @@ const initialDisabled = true;
 
 const App = () => {
 
-  const [users, setUsers] = useState(initialUsers);
+  const [order, setOrder] = useState(initialUsers);
     const [formValues, setFormValues] = useState(initialFormValues); 
     const [formErrors, setFormErrors] = useState(initialFormErrors); 
     const [disabled, setDisabled] = useState(initialDisabled); 
       
     
-      const postNewUser = (newUser) => {
+      const postNewOrder = (newOrder) => {
           axios
-            .post("https://reqres.in/api/orders", newUser)
+            .post("https://reqres.in/api/orders", newOrder)
             .then((res) => {
-              setUsers([res.data, ...users]);
+              setOrder([res.data, ...order]);
               setFormValues(initialFormValues);
               console.log(res.data);
             })
@@ -71,7 +72,7 @@ const App = () => {
         };
       
         const formSubmit = () => {
-          const newUsers = {
+          const newOrders = {
             name: formValues.name.trim(),
             size: formValues.size.trim(),
             choice: formValues.choice.trim(),
@@ -80,7 +81,7 @@ const App = () => {
             ),
             special: formValues.special.trim(),
           };
-          postNewUser(newUsers);
+          postNewOrder(newOrders);
         };
           
             useEffect(() => {
@@ -88,8 +89,7 @@ const App = () => {
                 setDisabled(!valid);
               });
             }, [formValues]);
-
-           
+     
   return (
     <>
       <div className="container">
@@ -101,7 +101,7 @@ const App = () => {
            </div>
       </nav>
       <Switch>
-        <Route path='/Order'>
+        <Route path='/pizza'>
           <Order 
               values={formValues}
               change={inputChange}
@@ -109,7 +109,13 @@ const App = () => {
               disabled={disabled}
               errors={formErrors}/>
         </Route>
-        <Route path='/'>
+        <Route path='/pizza/:id'>
+        {
+          order.map((user) => {
+        return <Confirmation key={user.id} details={user} />;
+      })}
+      </Route>
+        <Route exact path='/'>
           <Home />
         </Route>
       </Switch>

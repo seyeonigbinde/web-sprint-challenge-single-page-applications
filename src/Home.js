@@ -7,14 +7,14 @@ export default function Home() {
   const history = useHistory()
 
   const routeToOrder = () => {
-    history.push('/Order')
+    history.push('/pizza')
   }
 
   return (
 <>
     <div className='home-image'>
         <h1>Your favourite food, deliver while coding</h1>
-        <button onClick={routeToOrder}>Pizza?</button>
+        <button onClick={routeToOrder} id="order-pizza">Pizza?</button>
     </div>
       <h2>Food Delivery in Lagos</h2>
      <div className='pizza_items'>
