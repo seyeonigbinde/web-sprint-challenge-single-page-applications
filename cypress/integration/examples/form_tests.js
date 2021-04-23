@@ -1,14 +1,16 @@
 describe("Quotes app", () => {
     beforeEach(() => {
-      // arbitrary code we want running before our tests run
+  
       cy.visit("http://localhost:3001/pizza");
     });
 
 const nameInput = () => cy.get('input[name="name"]');
-const sizeInput = () => cy.get('input[name="size"]');
+const sizeInput = () => cy.get('#size-dropdown');
 const choiceInput = () => cy.get('input[name="choice"]');
-const specialInput = () => cy.get('input[name="special"]');
 
+const checkboxInput = () => cy.get('input[type="checkbox"]');
+const specialInput = () => cy.get('#special-text');
+// const submitBtn = () => cy.get('button[id="order-button"]');
 
 it("Can type in the inputs", () => {
      nameInput()
@@ -17,23 +19,25 @@ it("Can type in the inputs", () => {
         .should("have.value", "Seye Onigbinde");
 
         sizeInput()
-        .should("have.value", "")
-        .type("small")
+        .select("small")
         .should("have.value", "small");
 
         choiceInput()
-        .should("have.value", "")
-        .type("seyeonigbinde@gmail.com")
-        .should("have.value", "Garlic Ranch");
+        .check("garlic_ranch");
+
+        checkboxInput()
+        .should("not.be.checked")
+        .check(['topping1', 'topping3'])
+        .should("be.checked");
+   
 
         specialInput()
         .should("have.value", "")
-        .type("Nigeria")
-        .should("have.value", "Nigeria");
+        .type("Please deliver on time")
+        .should("have.value", "Please deliver on time");
 
-  
+
     });
-
 
 });
 

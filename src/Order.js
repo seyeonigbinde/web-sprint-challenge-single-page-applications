@@ -68,16 +68,16 @@ export default function Form (props) {
     <h4>Add Toppings: </h4>
     <div className="toppings">
         <label>
-          <input type="checkbox" name="topping1" checked={values.pepper} onChange={onChange}/> Pepperoni
+          <input type="checkbox" name="topping1" value="topping1" checked={values.pepper} onChange={onChange}/> Pepperoni
         </label>
         <label>
-          <input type="checkbox" name="topping2" checked={values.sausage} onChange={onChange} /> Sausage
+          <input type="checkbox" name="topping2" value="topping2" checked={values.sausage} onChange={onChange} /> Sausage
         </label>
         <label>
-          <input type="checkbox" name="topping3" checked={values.cbacon} onChange={onChange} /> Canadian Bacon
+          <input type="checkbox" name="topping3" value="topping3" checked={values.cbacon} onChange={onChange} /> Canadian Bacon
         </label>
         <label>
-          <input type="checkbox" name="topping4" checked={values.spicy} onChange={onChange} /> Spicy Italian Sausage
+          <input type="checkbox" name="topping4" value="topping4" checked={values.spicy} onChange={onChange} /> Spicy Italian Sausage
         </label>
         <label>
           <input type="checkbox" name="topping5" checked={values.grilled} onChange={onChange} /> Grilled Chicken
