@@ -7,17 +7,21 @@ import Order from './Order';
 // import Home from './Home';
 
 const initialFormValues = {
-  first_name: "",
-  last_name: "",
-  email: "",
-  pwd: "",
-  tos: false,
+  name: "",
+  choice: "",
+  size: "",
+  topping1: false,
+  topping2: false,
+  topping3: false,
+  topping4: false,
+  topping5: false,
+  special: "",
 };
 const initialFormErrors = {
-  first_name: "",
-  last_name: "",
-  email: "",
-  pwd: "",
+  name: "",
+  choice: "",
+  size: "",
+  special: "",
 };
 const initialUsers = [];
 const initialDisabled = true;
@@ -68,11 +72,13 @@ const App = () => {
       
         const formSubmit = () => {
           const newUsers = {
-            first_name: formValues.first_name.trim(),
-            last_name: formValues.last_name.trim(),
-            email: formValues.email.trim(),
-            pwd: formValues.pwd.trim(),
-            tos: formValues.tos,
+            name: formValues.name.trim(),
+            size: formValues.size.trim(),
+            choice: formValues.choice.trim(),
+            toppings: ["topping1", "topping2", "topping3", "topping4", "topping5"].filter(
+              (topping) => formValues[topping]
+            ),
+            special: formValues.special.trim(),
           };
           postNewUser(newUsers);
         };
