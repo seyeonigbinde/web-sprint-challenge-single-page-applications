@@ -4,7 +4,7 @@ import * as yup from 'yup';
 import schema from './formSchema';
 import axios from 'axios';
 import Order from './Order';
-// import Home from './Home';
+import Home from './Home';
 
 const initialFormValues = {
   name: "",
@@ -89,12 +89,7 @@ const App = () => {
               });
             }, [formValues]);
 
-            const history = useHistory()
-
-              const routeToOrder = () => {
-                history.push('/Order')
-              }
-
+           
   return (
     <>
       <div className="container">
@@ -105,10 +100,6 @@ const App = () => {
               <Link to='/Order'>Order Now!</Link>
            </div>
       </nav>
-      <div className='home-image'>
-        <h1>Your favourite food, deliver while coding</h1>
-        <button onClick={routeToOrder}>Pizza?</button>
-      </div>
       <Switch>
         <Route path='/Order'>
           <Order 
@@ -118,9 +109,9 @@ const App = () => {
               disabled={disabled}
               errors={formErrors}/>
         </Route>
-        {/* <Route path='/'>
+        <Route path='/'>
           <Home />
-        </Route> */}
+        </Route>
       </Switch>
       </div>
       

@@ -16,6 +16,9 @@ export default function Form (props) {
 
   return (
     <>
+    <div className='home-image'>
+        <h1>Order your Pizza</h1>
+      </div>
       <h1> Build you own pizza</h1>
     <form className='container' onSubmit={onSubmit} id="pizza-form">
 
