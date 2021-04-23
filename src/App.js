@@ -1,16 +1,15 @@
 import React, {useState, useEffect} from "react";
-import { Route, Link, Switch, useHistory } from 'react-router-dom';
+import { Route, Link, Switch } from 'react-router-dom';
 import * as yup from 'yup';
 import schema from './formSchema';
 import axios from 'axios';
 import Order from './Order';
 import Home from './Home';
-import Confirmation from './Confirmation';
 
 const initialFormValues = {
   name: "",
-  choice: "",
   size: "",
+  choice: "",
   topping1: false,
   topping2: false,
   topping3: false,
@@ -24,12 +23,12 @@ const initialFormErrors = {
   size: "",
   special: "",
 };
-const initialUsers = [];
+const initialOrders = [];
 const initialDisabled = true;
 
 const App = () => {
 
-  const [order, setOrder] = useState(initialUsers);
+    const [order, setOrder] = useState(initialOrders);
     const [formValues, setFormValues] = useState(initialFormValues); 
     const [formErrors, setFormErrors] = useState(initialFormErrors); 
     const [disabled, setDisabled] = useState(initialDisabled); 
@@ -71,7 +70,7 @@ const App = () => {
           });
         };
       
-        const formSubmit = () => {
+      const formSubmit = () => {
           const newOrders = {
             name: formValues.name.trim(),
             size: formValues.size.trim(),
@@ -89,6 +88,7 @@ const App = () => {
                 setDisabled(!valid);
               });
             }, [formValues]);
+
      
   return (
     <>
@@ -97,7 +97,7 @@ const App = () => {
            <h1>Lambda Eats</h1>
            <div className='nav-links'>
               <Link to='/'>Home</Link>
-              <Link to='/Order'>Order Now!</Link>
+              <Link to=''>Help</Link>
            </div>
       </nav>
       <Switch>
@@ -107,14 +107,10 @@ const App = () => {
               change={inputChange}
               submit={formSubmit}
               disabled={disabled}
-              errors={formErrors}/>
+              errors={formErrors}
+              order= {order}
+              />
         </Route>
-        <Route path='/pizza/:id'>
-        {
-          order.map((user) => {
-        return <Confirmation key={user.id} details={user} />;
-      })}
-      </Route>
         <Route exact path='/'>
           <Home />
         </Route>

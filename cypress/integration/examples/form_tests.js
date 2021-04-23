@@ -1,4 +1,4 @@
-describe("Quotes app", () => {
+describe("Pizza Order App", () => {
     beforeEach(() => {
   
       cy.visit("http://localhost:3001/pizza");
@@ -31,7 +31,7 @@ it("test that you can add text to the box", () => {
 
     });
 
-    it("test that you can select multiple toppings", () => {
+it("test that you can select multiple toppings", () => {
 
         checkboxInput()
         .should("not.be.checked")
@@ -40,7 +40,7 @@ it("test that you can add text to the box", () => {
 
     });
 
-    it("test that you can submit the form", () => {
+it("test that you can submit the form", () => {
 
         nameInput()
         .should("have.value", "")
@@ -68,6 +68,7 @@ it("test that you can add text to the box", () => {
         submitBtn().click();
 
     });
+
 
 });
 

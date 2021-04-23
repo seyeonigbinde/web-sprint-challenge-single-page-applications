@@ -1,20 +1,21 @@
 import React from 'react';
 
-function Confirmation({ details }) {
+function Confirmation({ details, close }) {
   if (!details) {
-    return <h3>Working fetching your customer&apos;s order details...</h3>
+    return <h3>Working fetching the customer&apos;s order details...</h3>
   }
 
+  
   return (
     <div className='container'>
-        <div className='home-image'>
-        <h1>Congrats! Pizza is on it's way</h1>
-      </div>
-        <h2>Order Summary</h2>
-      <p>Name: {details.name}</p>
-      <p>Size: {details.size}</p>
-      <p>Choice: {details.choice}</p>
-      <p>Special Instruction: {details.special}</p>
+        <h2>Congrats! Pizza is on it's way</h2>
+
+        <h3>Order Summary:</h3>
+            <p>Name: {details.name}</p>
+            <p>Size: {details.size}</p>
+            <p>Choice: {details.choice}</p>
+            <p>Special Instruction: {details.special}</p>
+        <button button >Close</button>
     </div>
   )
 }
