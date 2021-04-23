@@ -1,13 +1,143 @@
+
+* {
+  box-sizing: border-box;
+  border: 1px solid #4f4f4f;
+}
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(244, 244, 244);
+  color: rgb(65, 75, 60);
+  font-family: 'san-Serif', serif;
+  padding: 32px;
+  width: 80%;
+  margin: auto;
+}
+.container {
+  border: 1px solid rgb(210, 210, 210);
+  border-radius: 4px;
+  box-shadow: 0px 1px 6px -2px rgb(128, 127, 127);
+  padding: 32px;
+  background-color: white;
+  margin-bottom: 24px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1, h2, h3, h4 {
+  color: #4f4f4f;
+}
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  border-bottom: 1px solid #efefef;
+  margin-bottom: 32px;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #4f4f4f;
+  font-weight: bold;
+  margin-right: 8px;
+  background-color: #ddd;
+  text-align: center;
+  width: 100%;
+}
+
+.nav-links a:last-of-type {
+  margin-right: 0;
+}
+
+.nav-links a.active {
+  border-bottom: 1px solid #1c5d76;
+}
+.nav-links a.hover {
+  background-color: #4f4f4f;
+  color: white;
+}
+.home-wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.home-image {
+  width: 100%;
+  height: 40vh;
+  object-fit: cover;
+  background-image: url('https://images.unsplash.com/photo-1513104890138-7c749659a591?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	display: flex;
+  flex-direction: column;
+  justify-content: center;
+	align-items: center;
+}
+.home-image h1{
+  color: white;
+  font-size: 2.5rem;
+}
+.home-image button{
+  background-color: #4f4f4f;
+  color: white;
+  padding: 2%;
+  border: 0;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+input, select, button {
+  height: 1.5rem;
+  width: 150px;
+  margin: 8px 8px 8px 0;
+}
+button {
+  color: crimson;
+  background-color: white;
+  border: 1px solid crimson;
+
+  &:disabled {
+    cursor: not-allowed;
+    color: darkgray;
+    border-color: darkgray;
+  }
+}
+#submit {
+  display: flex;
+  justify-content: flex-end;
+  
+}
+.errors{
+  color: red;
+  font-size: 0.8rem;
+}
+
+.toppings{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 40%;
+  height: 30vh;
+  align-items: center;
+  padding: 0;
+  
 }
