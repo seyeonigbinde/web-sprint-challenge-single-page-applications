@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Confirmation({ details, close }) {
+function Confirmation({ details }) {
   if (!details) {
     return <h3>Working fetching the customer&apos;s order details...</h3>
   }
@@ -15,7 +15,7 @@ function Confirmation({ details, close }) {
             <p>Size: {details.size}</p>
             <p>Choice: {details.choice}</p>
             <p>Special Instruction: {details.special}</p>
-        <button button >Close</button>
+        <button>Close</button>
     </div>
   )
 }
