@@ -38,163 +38,68 @@ export default function Form (props) {
         </label>
         <p>Choice of Sauce</p>
         <label>
-          <input
-            type="radio"
-            value={values.original_red}
-            onChange={onChange}
-            name="original_red"
-          />
-          Original Red
+          <input type="radio" value={values.original_red} onChange={onChange} name="original_red"/>Original Red
         </label>
         <label>
-          <input
-            type="radio"
-            value={values.garlic_ranch}
-            onChange={onChange}
-            name="garlic_ranch"
-          />Garlic Ranch
+          <input type="radio" value={values.garlic_ranch} onChange={onChange} name="garlic_ranch"/>Garlic Ranch
         </label>
         <label>
-          <input
-            type="radio"
-            value={values.bbq_sauce}
-            onChange={onChange}
-            name="bbq_sauce"
-          />BBQ Sauce
+          <input type="radio" value={values.bbq_sauce} onChange={onChange} name="bbq_sauce"/>BBQ Sauce
         </label>
         <label>
-          <input
-            type="radio"
-            value={values.spinach_alfredo}
-            onChange={onChange}
-            name="spinach_alfredo"
-          />Spinach Alfredo
+          <input type="radio" value={values.spinach_alfredo} onChange={onChange} name="spinach_alfredo"/>Spinach Alfredo
         </label>
 
         {/* toppings */}
-        <p>Add Toppings</p>
+    <p>Add Toppings</p>
     <div className="toppings">
         <label>
-          <input
-            type="checkbox"
-            name="pepper"
-            checked={values.pepper}
-            onChange={onChange}
-          /> Pepperoni
+          <input type="checkbox" name="pepper" checked={values.pepper} onChange={onChange}/> Pepperoni
         </label>
         <label>
-          <input
-            type="checkbox"
-            name="sausage"
-            checked={values.sausage}
-            onChange={onChange}
-          /> Sausage
+          <input type="checkbox" name="sausage" checked={values.sausage} onChange={onChange} /> Sausage
         </label>
         <label>
-          <input
-            type="checkbox"
-            name="cbacon"
-            checked={values.cbacon}
-            onChange={onChange}
-          /> Canadian Bacon
+          <input type="checkbox" name="cbacon" checked={values.cbacon} onChange={onChange} /> Canadian Bacon
         </label>
         <label>
-          <input
-            type="checkbox"
-            name="spicy"
-            checked={values.spicy}
-            onChange={onChange}
-          /> Spicy Italian Sausage
+          <input type="checkbox" name="spicy" checked={values.spicy} onChange={onChange} /> Spicy Italian Sausage
         </label>
         <label>
-          <input
-            type="checkbox"
-            name="grilled"
-            checked={values.grilled}
-            onChange={onChange}
-          /> Grilled Chicken
+          <input type="checkbox" name="grilled" checked={values.grilled} onChange={onChange} /> Grilled Chicken
         </label>
         <label>
-          <input
-            type="checkbox"
-            name="onions"
-            checked={values.onions}
-            onChange={onChange}
-          /> Onions
+          <input type="checkbox" name="onions" checked={values.onions} onChange={onChange} /> Onions
         </label>
         <label>
-          <input
-            type="checkbox"
-            name="green_pepper"
-            checked={values.green_pepper}
-            onChange={onChange}
-          /> Green Pepper
+          <input type="checkbox" name="green_pepper" checked={values.green_pepper} onChange={onChange} /> Green Pepper
         </label>
         <label>
-          <input
-            type="checkbox"
-            name="tomatoes"
-            checked={values.tomatoes}
-            onChange={onChange}
-          /> Diced Tomatoes
+          <input type="checkbox" name="tomatoes" checked={values.tomatoes} onChange={onChange} /> Diced Tomatoes
         </label>
         <label>
-          <input
-            type="checkbox"
-            name="olives"
-            checked={values.olives}
-            onChange={onChange}
-          /> Black Olives
+          <input type="checkbox" name="olives" checked={values.olives} onChange={onChange} /> Black Olives
         </label>
         <label>
-          <input
-            type="checkbox"
-            name="garlic"
-            checked={values.garlic}
-            onChange={onChange}
-          /> Roasted Garlic
+          <input type="checkbox" name="garlic" checked={values.garlic} onChange={onChange} /> Roasted Garlic
         </label>
         <label>
-          <input
-            type="checkbox"
-            name="hearts"
-            checked={values.heart}
-            onChange={onChange}
-          /> Artichoke Hearts
+          <input type="checkbox" name="hearts" checked={values.heart} onChange={onChange} /> Artichoke Hearts
         </label>
         <label>
-          <input
-            type="checkbox"
-            name="cheese"
-            checked={values.cheese}
-            onChange={onChange}
-          /> Three Cheese
+          <input type="checkbox" name="cheese" checked={values.cheese} onChange={onChange} /> Three Cheese
         </label>
         <label>
-          <input
-            type="checkbox"
-            name="pineapple"
-            checked={values.pineapple}
-            onChange={onChange}
-          /> Pineapple
+          <input type="checkbox" name="pineapple" checked={values.pineapple} onChange={onChange} /> Pineapple
         </label>
         <label>
-          <input
-            type="checkbox"
-            name="extra_cheese"
-            checked={values.extra_cheese}
-            onChange={onChange}
-          /> Extra Cheese
+          <input type="checkbox" name="extra_cheese"  checked={values.extra_cheese} onChange={onChange} /> Extra Cheese
         </label>
      </div>
         <p> Special Instruction</p>
-        <textarea
-            name="instruct"
-            checked={values.instruct}
-            placeholder="Anything else you'd like to add?"
-            rows="5" cols="50"
-            />
+        <textarea name="instruct" value={values.instruct} placeholder="Anything else you'd like to add?" rows="5" cols="100" />
            
+        
 
         <div id="submit">
           <button id="submit" disabled={disabled}>Add to Order</button>

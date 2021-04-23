@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from "react";
-import { Route, Link, Switch } from 'react-router-dom';
+import { Route, Link, Switch, useHistory } from 'react-router-dom';
 import * as yup from 'yup';
 import schema from './formSchema';
 import axios from 'axios';
 import Order from './Order';
-import Home from './Home';
+// import Home from './Home';
 
 const initialFormValues = {
   first_name: "",
@@ -83,6 +83,12 @@ const App = () => {
               });
             }, [formValues]);
 
+            const history = useHistory()
+
+              const routeToOrder = () => {
+                history.push('/Order')
+              }
+
   return (
     <>
       <div className="container">
@@ -95,7 +101,7 @@ const App = () => {
       </nav>
       <div className='home-image'>
         <h1>Your favourite food, deliver while coding</h1>
-        <button>Pizza?</button>
+        <button onClick={routeToOrder}>Pizza?</button>
       </div>
       <Switch>
         <Route path='/Order'>
@@ -116,6 +122,10 @@ const App = () => {
   );
 };
 export default App;
+
+
+
+
 
 
 
