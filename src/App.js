@@ -10,11 +10,11 @@ const initialFormValues = {
   name: "",
   size: "",
   choice: "",
-  topping1: false,
-  topping2: false,
-  topping3: false,
-  topping4: false,
-  topping5: false,
+  pepper: false,
+  sausage: false,
+  cbacon: false,
+  spicy: false,
+  grilled: false,
   special: "",
 };
 const initialFormErrors = {
@@ -75,7 +75,7 @@ const App = () => {
             name: formValues.name.trim(),
             size: formValues.size.trim(),
             choice: formValues.choice.trim(),
-            toppings: ["topping1", "topping2", "topping3", "topping4", "topping5"].filter(
+            toppings: ["pepper", "sausage", "cbacon", "spicy", "grilled"].filter(
               (topping) => formValues[topping]
             ),
             special: formValues.special.trim(),

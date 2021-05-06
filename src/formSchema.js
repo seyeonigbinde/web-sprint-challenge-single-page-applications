@@ -14,17 +14,17 @@ export default yup.object().shape({
 
   choice: yup
     .string()
-    .oneOf(["original_red", "garlic_ranch", "bbq_sauce", "spinach_alfredo"], "Choice of Sauce is required"),
+    .oneOf(["Original Red", "Garlic Ranch", "BQ Sauce", "Spinach Alfredo"], "Choice of Sauce is required"),
 
-  topping1: yup
+  pepper: yup
     .boolean(),
-  topping2: yup
+  sausage: yup
     .boolean(),
-  topping3: yup
+    cbacon: yup
     .boolean(),
-  topping4: yup
+  spicy: yup
     .boolean(),
-  topping5: yup
+  grilled: yup
     .boolean(),
 
   special: yup

@@ -60,35 +60,35 @@ export default function Form (props) {
         {/* Choice of Sauce */}
         <h4>Choice of Sauce: </h4>
         <label>
-          <input type="radio" value="original_red" onChange={onChange} name="choice" checked={values.choice === "original_red"}/>Original Red
+          <input type="radio" value="Original Red" onChange={onChange} name="choice" checked={values.choice === "Original Red"}/>Original Red
         </label>
         <label>
-          <input type="radio" value="garlic_ranch" onChange={onChange} name="choice" checked={values.choice === "garlic_ranch"}/>Garlic Ranch
+          <input type="radio" value="Garlic Ranch" onChange={onChange} name="choice" checked={values.choice === "Garlic Ranch"}/>Garlic Ranch
         </label>
         <label>
-          <input type="radio" value="bbq_sauce" onChange={onChange} name="choice" checked={values.choice === "bbq_sauce"} />BBQ Sauce
+          <input type="radio" value="BQ Sauce" onChange={onChange} name="choice" checked={values.choice === "BQ Sauce"} />BBQ Sauce
         </label>
         <label>
-          <input type="radio" value="spinach_alfredo" onChange={onChange} name="choice" checked={values.choice === "spinach_alfredo"}/>Spinach Alfredo
+          <input type="radio" value="Spinach Alfredo" onChange={onChange} name="choice" checked={values.choice === "Spinach Alfredo"}/>Spinach Alfredo
         </label>
 
         {/* toppings */}
         <h4>Add Toppings: </h4>
         <div className="toppings">
             <label>
-                <input type="checkbox" name="topping1" value="topping1" checked={values.pepper} onChange={onChange}/> Pepperoni
+                <input type="checkbox" name="pepper" value="topping1" checked={values.pepper} onChange={onChange}/> Pepperoni
             </label>
             <label>
-                <input type="checkbox" name="topping2" value="topping2" checked={values.sausage} onChange={onChange} /> Sausage
+                <input type="checkbox" name="sausage" value="topping2" checked={values.sausage} onChange={onChange} /> Sausage
             </label>
             <label>
-                <input type="checkbox" name="topping3" value="topping3" checked={values.cbacon} onChange={onChange} /> Canadian Bacon
+                <input type="checkbox" name="cbacon" value="topping3" checked={values.cbacon} onChange={onChange} /> Canadian Bacon
             </label>
             <label>
-                <input type="checkbox" name="topping4" value="topping4" checked={values.spicy} onChange={onChange} /> Spicy Italian Sausage
+                <input type="checkbox" name="spicy" value="topping4" checked={values.spicy} onChange={onChange} /> Spicy Italian Sausage
             </label>
             <label>
-                <input type="checkbox" name="topping5" value="topping5" checked={values.grilled} onChange={onChange} /> Grilled Chicken
+                <input type="checkbox" name="grilled" value="topping5" checked={values.grilled} onChange={onChange} /> Grilled Chicken
             </label>
         </div>
         {/* Special Instruction */}
